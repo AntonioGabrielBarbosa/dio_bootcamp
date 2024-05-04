@@ -6,7 +6,7 @@ menu = """
 
     [d] - depósito
     [s] - saque
-    [e] - extrar
+    [e] - extrato
     [q] - sair
 
 """
@@ -48,11 +48,12 @@ while True:
 
             print("Erro: não pode sacar acima de 3 saques por dia.")
         
-        saldo -= valor
+        else:
+            saldo -= valor
 
-        numero_saques += 1
+            numero_saques += 1
 
-        print("\nSaque concluído\n")
+            print("\nSaque concluído\n")
     
     elif opcao == 'e':
 
