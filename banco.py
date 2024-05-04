@@ -64,7 +64,7 @@ while True:
         extrato = f"""
 
         Saldo: {saldo:.2f}
-        Saque: {valor:.2f}
+        Saque: {registro_saque:.2f}
 
 """
         print(extrato)
