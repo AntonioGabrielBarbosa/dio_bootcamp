@@ -21,6 +21,8 @@ extrato = ""
 
 numero_saques = 0
 
+registro_saque = 0
+
 
 while True:
 
@@ -52,6 +54,8 @@ while True:
             saldo -= valor
 
             numero_saques += 1
+
+            registro_saque += valor
 
             print("\nSaque concluído\n")
     
