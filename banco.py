@@ -34,7 +34,7 @@ while True:
 
         saldo += valor
 
-        print("\nDepósitov concluído.\n")
+        print("\nDepósito concluído.\n")
     
     elif opcao == 's':
 
@@ -62,6 +62,7 @@ while True:
         Saque: {valor:.2f}
 
 """
+        print(extrato)
     
     elif opcao == 'q':
 
