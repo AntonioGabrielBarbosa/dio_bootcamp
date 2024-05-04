@@ -15,23 +15,14 @@ menu = """
 
 """
 
-saldo = 0
 
 LIMITE = 500
 
 LIMITE_DIARIO = 3
 
-extrato = ""
-
-numero_saques = 0
-
-cliente = {}
-
-conta_corrente = {}
-
 AGENCIA = "0001"
 
-conta = 0
+
 
 while True:
 
@@ -43,6 +34,10 @@ while True:
 
         valor = float(input("Valor a ser depositado: "))
 
+        saldo = 0
+
+        extrato = ""
+
         deposito = bc.deposito(saldo, valor, extrato)
 
         print(deposito)
@@ -50,6 +45,8 @@ while True:
     elif opcao == 's':
 
         valor = float(input("Valor para o saque: "))
+
+        numero_saques = 0
 
         saque = bc.saque(saldo=saldo, valor=valor, extrato=extrato, limite=LIMITE, numero_saques=numero_saques, limite_saques=LIMITE_DIARIO)
 
@@ -71,13 +68,19 @@ while True:
 
         endereco = input("endereço: ")
 
+        cliente = {}
+
         novo_cliente = bc.criar_cliente(cliente, nome, nascimento, cpf, endereco)
 
         print(novo_cliente)
     
     elif opcao == 'co':
 
+        conta = 0
+
         conta += 1
+
+        conta_corrente = {}
 
         nova_conta_corrente = bc.criar_conta_corrente(conta_corrente, cliente, conta, AGENCIA)
 
