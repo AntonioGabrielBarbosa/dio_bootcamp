@@ -24,6 +24,8 @@ numero_saques = 0
 
 while True:
 
+    print(menu)
+
     opcao = input("\nEscolha sua opcao: ")
 
     if opcao == 'd':
