@@ -14,11 +14,11 @@ def saque (*, saldo, valor, extrato, limite, numero_saques, limite_saques):
 
     numero_saques += 1
 
-    extrato = f"""
-        SALDO: {saldo:.2f} $RS
+    extrato += f"""
+        SAQUE: {saldo:.2f} $RS
 """
 
-    return extrato
+    return saldo, extrato, numero_saques
 
 def deposito(saldo, valor, extrato, /):
 
@@ -28,11 +28,11 @@ def deposito(saldo, valor, extrato, /):
     
     saldo += valor
 
-    extrato =  f"""
+    extrato +=  f"""
         SALDO = {saldo:.2f} $RS
     """
 
-    return extrato
+    return saldo, extrato
 
 def criar_cliente(cliente, nome, nascimento, cpf, endereco):
 
@@ -42,7 +42,7 @@ def criar_cliente(cliente, nome, nascimento, cpf, endereco):
 
         print(chave, valor)
     
-    return "Cliente foi criado."
+    return cliente, nome, nascimento, cpf, endereco
 
 def criar_conta_corrente(corrente, usuario, conta, agencia):
 
@@ -54,13 +54,14 @@ def criar_conta_corrente(corrente, usuario, conta, agencia):
 
         print(chave, valor)
     
-    return "Conta corrente criada."
+    return corrente, usuario, conta, agencia
 
 def historico_bancario(extrato, saldo):
 
-    
-    extrato = f"""
+    extrato = """"""
+
+    extrato += f"""
         SALDO: {saldo:.2f} $RS
 """
     
-    return extrato
+    return saldo, extrato
