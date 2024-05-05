@@ -46,6 +46,8 @@ def criar_cliente(cliente, nome, nascimento, cpf, endereco):
 
 def criar_conta_corrente(corrente, usuario, conta, agencia):
 
+    conta += 1
+
     corrente = {"Usuário": usuario, "Conta": conta, "Agência": agencia}
 
     for chave, valor in corrente.items():

@@ -20,6 +20,7 @@ conta_corrente = {}
 saldo = 0
 extrato = ""
 numero_saques = 0
+conta = 0
 
 while True:
     print(menu)
@@ -27,26 +28,28 @@ while True:
 
     if opcao == 'd':
         valor = float(input("Valor a ser depositado: "))
-        print(f"Depósito realizado. Seu saldo atual é {bc.deposito(saldo, valor, extrato)}.")
+        deposito = bc.deposito(saldo, valor, extrato)
+        print(deposito)
     
     elif opcao == 's':
         valor = float(input("Valor para o saque: "))
-        print(f"Saque realizado. Seu saldo atual é {bc.saque(saldo=saldo, valor=valor, extrato=extrato, limite=LIMITE, numero_saques=numero_saques, limite_saques=LIMITE_DIARIO)}.")
+        saque = bc.saque(saldo=saldo, valor=valor, extrato=extrato, limite=LIMITE, numero_saques=numero_saques, limite_saques=LIMITE_DIARIO)
+        print(saque)
     
     elif opcao == 'e':
-        print(bc.historico_bancario(extrato=extrato, saldo=saldo))
+        historico = bc.historico_bancario(extrato, saldo)
+        print(historico)
     
     elif opcao == 'cli':
         nome = input("Nome: ")
         nascimento = input("Data de nascimento: ")
         cpf = input("CPF: ")
         endereco = input("Endereço: ")
-        print(f"Cliente {bc.criar_cliente(cliente, nome, nascimento, cpf, endereco)} criado com sucesso.")
+        novo_cliente = bc.criar_cliente(cliente, nome, nascimento, cpf, endereco)
+        print(novo_cliente)
     
     elif opcao == 'co':
-        conta = 0
-        conta += 1
-        print(f"Conta corrente {bc.criar_conta_corrente(conta_corrente, cliente, conta, AGENCIA)} criada com sucesso.")
+        nova_conta_corrente = bc.criar_conta_corrente(conta_corrente, cliente, conta, AGENCIA)
     
     elif opcao == 'q':
         print("Saindo do sistema...\n")
